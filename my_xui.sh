@@ -36,7 +36,6 @@ wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<EO
 1
 EOF
 
-
 # 安装签发证书工具
 echo "安装签发证书工具..."
 curl https://get.acme.sh | sh
@@ -47,26 +46,13 @@ echo "申请 SSL 证书，并下载到服务器目录..."
 ~/.acme.sh/acme.sh --issue -d $DOMAIN --standalone --listen-v6
 ~/.acme.sh/acme.sh --installcert -d $DOMAIN --key-file /root/private.key --fullchain-file /root/cert.crt
 
-# 安装 expect 工具
-apt install -y expect
-
-# 安装 X-UI 的命令之前添加以下代码
+# 安装 X-UI
 echo "正在安装 X-UI..."
-wget -N --no-check-certificate https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh && bash install.sh
-
-# 使用 expect 来自动填入账户名、密码和端口
-echo "正在设置 X-UI 的用户名、密码和端口..."
-expect << EOF
-spawn bash /usr/local/XrayR/install.sh
-expect "设置您的账户名:"
-send "VIP\n"
-expect "请设置您的账户密码:"
-send "My@123123\n"
-expect "请设置面板访问端口:"
-send "8880\n"
-expect eof
+wget -N --no-check-certificate https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh && bash install.sh <<EOF
+VIP
+My@123123
+8880
 EOF
-
 
 # 提示用户设置 X-UI 的用户名、密码和端口
 echo "已完成设置防火墙规则..."
@@ -74,16 +60,5 @@ echo "已完成部署 wget curl socat cron 依赖..."
 echo "已完成 warp 安装及设置..."
 echo "已完成申请 SSL 证书，并下载到服务器目录..."
 echo "已完成设置 X-UI 的用户名、密码和端口..."
-
-# 设置用户名、密码和端口变量
-USERNAME="VIP"
-PASSWORD="My@123123"
-PORT="8880"
-
-# 提示用户设置完成，并输出设置信息
-echo "已完成设置 X-UI 的用户名、密码和端口..."
-echo "用户名: $USERNAME"
-echo "密码: $PASSWORD"
-echo "端口: $PORT"
 
 echo "安装成功!"
