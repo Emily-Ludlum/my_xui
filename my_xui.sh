@@ -34,6 +34,7 @@ wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<EO
 2
 1
 1
+3
 EOF
 
 # 安装签发证书工具
