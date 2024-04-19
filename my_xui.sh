@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 默认设置
-DEFAULT_DOMAIN="example.com"
-DEFAULT_EMAIL="your_email@example.com"
+DEFAULT_DOMAIN="xui.vvps.link"
+DEFAULT_EMAIL="xui@vvps.link"
 
 # 询问用户输入域名和邮箱地址
 read -p "请输入要申请 SSL 证书的域名（默认值：$DEFAULT_DOMAIN）: " DOMAIN
@@ -30,7 +30,11 @@ apt install -y wget curl socat cron
 
 # 安装 Warp
 echo "安装 Warp..."
-wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh -y
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<EOF
+2
+1
+1
+EOF
 
 
 # 安装签发证书工具
