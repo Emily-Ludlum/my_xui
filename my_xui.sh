@@ -75,4 +75,15 @@ echo "已完成 warp 安装及设置..."
 echo "已完成申请 SSL 证书，并下载到服务器目录..."
 echo "已完成设置 X-UI 的用户名、密码和端口..."
 
+# 设置用户名、密码和端口变量
+USERNAME="VIP"
+PASSWORD="My@123123"
+PORT="8880"
+
+# 提示用户设置完成，并输出设置信息
+echo "已完成设置 X-UI 的用户名、密码和端口..."
+echo "用户名: $USERNAME"
+echo "密码: $PASSWORD"
+echo "端口: $PORT"
+
 echo "安装成功!"
