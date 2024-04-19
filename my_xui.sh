@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 # 默认设置
@@ -49,6 +50,7 @@ echo "申请 SSL 证书，并下载到服务器目录..."
 # 安装 X-UI
 echo "正在安装 X-UI..."
 wget -N --no-check-certificate https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh && bash install.sh <<EOF
+y
 VIP
 My@123123
 8880
