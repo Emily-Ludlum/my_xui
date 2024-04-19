@@ -31,7 +31,7 @@ apt install -y wget curl socat cron
 # 安装 Warp
 echo "安装 Warp..."
 wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh <<EOF
-zh_CN
+2
 1
 1
 EOF
@@ -48,11 +48,15 @@ echo "申请 SSL 证书，并下载到服务器目录..."
 
 # 安装 X-UI
 echo "正在安装 X-UI..."
-wget -N --no-check-certificate https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh && bash install.sh <<EOF
-VIP
-My@123123
-8880
-EOF
+wget -N --no-check-certificate https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh
+
+# 在 install.sh 脚本中添加参数接收和使用的逻辑
+sed -i 's/^read -p "Enter username for x-ui: " USERNAME$/USERNAME="VIP"/' install.sh
+sed -i 's/^read -p "Enter password for x-ui: " PASSWORD$/PASSWORD="My@123123"/' install.sh
+sed -i 's/^read -p "Enter port for x-ui: " PORT$/PORT="8880"/' install.sh
+
+bash install.sh
+
 
 # 提示用户设置 X-UI 的用户名、密码和端口
 echo "已完成设置防火墙规则..."
