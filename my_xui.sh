@@ -1,17 +1,12 @@
-
 #!/bin/bash
 
 # 默认设置
 DEFAULT_DOMAIN="xui.vvps.link"
 DEFAULT_EMAIL="xui@vvps.link"
 
-# 询问用户输入域名和邮箱地址
-read -p "请输入要申请 SSL 证书的域名（默认值：$DEFAULT_DOMAIN）: " DOMAIN
-read -p "请输入 SSL 证书的邮箱地址（默认值：$DEFAULT_EMAIL）: " EMAIL
-
-# 如果用户未输入任何内容，则使用默认设置
-DOMAIN=${DOMAIN:-$DEFAULT_DOMAIN}
-EMAIL=${EMAIL:-$DEFAULT_EMAIL}
+# 设置默认域名和邮箱地址
+DOMAIN="$DEFAULT_DOMAIN"
+EMAIL="$DEFAULT_EMAIL"
 
 # 设置防火墙规则
 echo "设置防火墙规则..."
