@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 默认设置
-DEFAULT_DOMAIN="xui.vvps.link"
-DEFAULT_EMAIL="xui@vvps.link"
+DEFAULT_DOMAIN="hax.vps777.tk"
+DEFAULT_EMAIL="hax@vps777.tk"
 
 # 设置默认域名和邮箱地址
 DOMAIN="$DEFAULT_DOMAIN"
