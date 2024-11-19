@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 默认设置
-DEFAULT_DOMAIN="hax.vps777.tk"
-DEFAULT_EMAIL="hax@vps777.tk"
+DEFAULT_DOMAIN="vip.woiden.tk"
+DEFAULT_EMAIL="vip@woiden.tk"
 
 # 设置默认域名和邮箱地址
 DOMAIN="$DEFAULT_DOMAIN"
@@ -47,7 +47,7 @@ echo "正在安装 X-UI..."
 wget -N --no-check-certificate https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh && bash install.sh <<EOF
 y
 VIP
-My@123123
+Abcd@1234
 8880
 EOF
 
